@@ -1,6 +1,6 @@
 # Apply filters to SQL queries
 
-## Project Background
+## Project Description
 
 As a security professional at a large organization, part of my role involves investigating security issues to help maintain system integrity. Recently, I identified potential security concerns related to login attempts and employee machines. My task was to examine data from the organization's **_employees_** and **_log_in_attempts_** tables. I used SQL filters to retrieve records from these datasets and investigated the potential security issues.
 
@@ -35,7 +35,7 @@ The code below demonstrates how I used SQL filters to create a query that identi
 
 In the screenshot, the first three lines represent my query, and the remaining portion shows a sample of the output. I started by selecting all data from the **_log_in_attempts_** table using the **_SELECT *_** and **_FROM_** keywords. Then, I used a **_WHERE_** clause with an **_OR_** operator to filter the results for login attempts that occurred on either 2022-05-09 or 2022-05-08. The first condition, **_login_date = '2022-05-09'_**, filters for logins on 2022-05-09, while the second condition, **_login_date = '2022-05-08'_**, filters for logins on 2022-05-08.
 
-### 3.Retrieve Login Attempts Outside of Mexico:
+### 3. Retrieve Login Attempts Outside of Mexico:
 Another suspicious activity involved login attempts that the team determined did not originate in Mexico. Therefore, I investigated login attempts that occurred outside of Mexico.
 As demonstrated below, I used SQL filters to create a query that identifies all login attempts outside of Mexico:
 
@@ -53,19 +53,24 @@ As demonstrated below, I used SQL filters to create a query that identifies all 
 
 In the screenshot, the first three lines represent my query, and the remaining portion shows a sample of the output. I started by selecting all data from the **_employees_** table using the **_SELECT *_** and **_FROM_** keywords. Then, I used a **_WHERE_** clause with **_AND_** to filter for employees who work in the Marketing department and in the East building. I used **_LIKE 'East%'_** to match the data in the **_office_** column, which represents the East building with a specific office number. The first condition, **_department = 'Marketing'_**, filters for employees in the Marketing department. The second condition, **_office LIKE 'East%'_**, filters for employees in the East building.
 
-### 4. Documentation and Reporting:
-- Documented findings, including identified risks, non-compliance issues, and recommendations for improvement.
-- Compiled a comprehensive audit report summarizing the security posture of Botium Toys and suggested action plans.
-- <a href="https://docs.google.com/document/d/1sWV1ljQTq3_BKBpe-YC6jaQZ1XnHwSganezDMraa_pM/edit?usp=sharing">Link to Documentation and Report</a>
+### 5. Retrieve Employees in Finance or Sales:
+The machines for employees in the Finance and Sales departments also need to be updated. Since a different security update is needed, I had to get information on employees only from these two departments. As shown below, I used SQL filters to create a query that identifies all employees in the Sales or Finance departments:
+
+![SQL retrieve employees in finance or salse department](https://github.com/user-attachments/assets/b58ba27d-bf49-46b0-adf5-704c3887855e)
+*Ref 5: SQL query*
+
+In the screenshot, the first three lines represent my query, and the remaining portion shows a sample of the output. I started by selecting all data from the **_employees_** table using the **_SELECT *_** and **_FROM_** keywords. Then, I used a **_WHERE_** clause with **_OR_** to filter for employees in either the Finance or Sales departments. The first condition, **_department = 'Finance'_**, filters for employees in the Finance department. The second condition, **_department = 'Sales'_**, filters for employees in the Sales department.
+
+### 6. Retrieve All Employees Not in IT:
+My team needed to make one more update to employee machines. Employees in the Information Technology (IT) department had already received this update, so the update was required for employees in all other departments. I used SQL filters to create a query that identifies all employees not in the IT department:
+
+![SQL retrieve all employees not in IT department](https://github.com/user-attachments/assets/909ccef4-b2f7-499b-8316-79138988c1ec)
+*Ref 6: SQL query*
+
+I started by selecting all data from the **_employees_** table using the **_SELECT *_** and **_FROM_** keywords. Then, I used a **_WHERE_** clause with **_NOT_** to filter out employees not in the IT department.
 
 
-## Key Findings
+## Summary
 
-- Compliance Gaps: Identified specific areas where Botium Toys' current practices do not fully align with NIST CSF standards.
-- Risk Areas: Highlighted potential risks related to online payment processing and data protection, especially concerning E.U. regulations.
-- Recommendations: Provided actionable recommendations to enhance security and compliance, including policy updates and infrastructure improvements.
-
-## Conclusion
-
-The internal security audit for Botium Toys provided critical insights into the company's IT security posture. By addressing the identified risks and compliance gaps, Botium Toys can better secure its infrastructure and continue to grow its online presence safely and in compliance with international regulations.
+In this project, I applied SQL filters to extract specific information on login attempts and employee machines. I worked with two different tables, **_log_in_attempts_** and **_employees_**, using the **_AND_**, **_OR_**, and **_NOT_** operators to filter for the specific information required for each task. Additionally, I used the **_LIKE_** operator and the **_%_** wildcard to match patterns in the data.
 
