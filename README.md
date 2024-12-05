@@ -1,5 +1,7 @@
 # Apply filters to SQL queries
 
+As part of my Google cybersecurity training, I worked on investigating security incidents using SQL filters to analyze organizational data. The scenario simulated real-world challenges, such as identifying suspicious login attempts, filtering employees by departments, and addressing compliance gaps. This project demonstrated my ability to use SQL for proactive security incident analysis and data-driven decision-making.
+
 ## Project Description
 
 As a security professional at a large organization, part of my role involves investigating security issues to help maintain system integrity. Recently, I identified potential security concerns related to login attempts and employee machines. My task was to examine data from the organization's **_employees_** and **_log_in_attempts_** tables. I used SQL filters to retrieve records from these datasets and investigated the potential security issues.
